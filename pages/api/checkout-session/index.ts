@@ -1,12 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import Stripe from "stripe";
-import { CartProduct } from "utils/CartContext";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2022-11-15",
 });
-
-export type Cart = CartProduct[];
 
 export type Item = {
   id: number;
@@ -22,7 +19,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const { cart }: { cart: Cart } = req.body;
+    const { cart }: { cart: Item[] } = req.body;
 
     if (!cart) {
       return res
