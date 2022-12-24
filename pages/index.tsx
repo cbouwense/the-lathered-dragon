@@ -8,6 +8,7 @@ import { useContext, useState } from "react";
 import { postRequest } from "utils/postRequest";
 import { getStripe } from "utils/getStripe";
 import { CartContext } from "utils/CartContext";
+import Image from "next/image";
 
 const items: Item[] = [
   {
@@ -80,9 +81,6 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-semibold text-center mt-10 text-black-400">
-        The Lathered Dragon
-      </h1>
       <div className="text-center mt-10">
         <h2 className="text-2xl font-semibold text-black-400">Coming Soon!</h2>
         <p className="text-gray-400 mt-4">
@@ -90,6 +88,13 @@ const Home: NextPage = () => {
           some soap!
         </p>
       </div>
+      <Image
+        src="/logo.png"
+        width={4500}
+        height={4500}
+        alt="The Lathered Dragon logo"
+        className="mx-auto w-1/2 h-1/2"
+      />
     </div>
   );
 };
