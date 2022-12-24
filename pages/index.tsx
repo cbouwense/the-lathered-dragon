@@ -4,6 +4,10 @@ import Head from "next/head";
 import CheckoutCancelled from "@/components/CheckoutCancelled/CheckoutCancelled";
 import CheckoutSuccess from "@/components/CheckoutSuccess/CheckoutSuccess";
 import Card, { Item } from "@/components/Card/Card";
+import { useContext, useState } from "react";
+import { postRequest } from "utils/postRequest";
+import { getStripe } from "utils/getStripe";
+import { CartContext } from "utils/CartContext";
 
 const items: Item[] = [
   {
@@ -49,7 +53,30 @@ const items: Item[] = [
 ];
 
 const Home: NextPage = () => {
+  const cart = useContext(CartContext);
   const { query } = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  const checkout = async () => {
+    setLoading(true);
+
+    console.log(cart);
+    const response = await postRequest("/api/checkout-session", {
+      cart: cart?.cartProducts,
+    });
+
+    if (response.statusCode === 500) {
+      console.error(response.message);
+      return;
+    }
+
+    const stripe = await getStripe();
+    const { error } = await stripe!.redirectToCheckout({
+      sessionId: response.id,
+    });
+    console.warn(error.message);
+    setLoading(false);
+  };
 
   return (
     <div>
@@ -64,6 +91,22 @@ const Home: NextPage = () => {
         </h1>
         {query.status === "cancelled" && <CheckoutCancelled />}
         {query.status === "success" && <CheckoutSuccess />}
+        {loading ? (
+          <button
+            type="button"
+            className="mt-6 rounded-md py-2 px-3 w-64 text-white shadow-lg bg-blue-500 shadow-blue-200 uppercase text-sm hover:ring-1 hover:ring-blue-500"
+          >
+            Processing...
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="mt-6 rounded-md py-2 px-3 w-64 text-white shadow-lg bg-blue-500 shadow-blue-200 uppercase text-sm hover:ring-1 hover:ring-blue-500"
+            onClick={checkout}
+          >
+            Checkout
+          </button>
+        )}
         <div className="grid grid-cols-4 gap-4 mt-10">
           {items.map((item) => (
             <Card key={item.id} item={item} />

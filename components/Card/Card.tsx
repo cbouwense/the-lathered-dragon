@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { MouseEventHandler, useState } from "react";
+import { MouseEventHandler, useContext, useState } from "react";
+import { CartContext } from "utils/CartContext";
 import { getStripe } from "utils/getStripe";
 import { postRequest } from "utils/postRequest";
 
@@ -16,37 +17,17 @@ export type CardProps = {
   item: Item;
 };
 
-const Card = ({ item: itemProp }: CardProps) => {
-  const [item, setItem] = useState(itemProp);
-  const [loading, setLoading] = useState(false);
+const Card = ({ item }: CardProps) => {
+  const cart = useContext(CartContext);
+
+  const productQuantity = cart?.getProductQuantity(item.id);
 
   const decreaseQuantity: MouseEventHandler<HTMLButtonElement> = () => {
-    setItem((item) => ({
-      ...item,
-      quantity: item.quantity > 1 ? item.quantity - 1 : item.quantity,
-    }));
+    cart?.removeOneFromCart(item.id);
   };
 
   const increaseQuantity: MouseEventHandler<HTMLButtonElement> = () => {
-    setItem((item) => ({ ...item, quantity: item.quantity + 1 }));
-  };
-
-  const checkout = async () => {
-    setLoading(true);
-
-    const response = await postRequest("/api/checkout-session", { item });
-
-    if (response.statusCode === 500) {
-      console.error(response.message);
-      return;
-    }
-
-    const stripe = await getStripe();
-    const { error } = await stripe!.redirectToCheckout({
-      sessionId: response.id,
-    });
-    console.warn(error.message);
-    setLoading(false);
+    cart?.addOneToCart(item.id);
   };
 
   return (
@@ -83,7 +64,7 @@ const Card = ({ item: itemProp }: CardProps) => {
               </svg>
             </button>
 
-            <span className="quantity">{item.quantity}</span>
+            <span className="quantity">{productQuantity}</span>
 
             <button
               className="increase__quantity p-1 rounded-full ring-1 ring-gray-200"
@@ -104,23 +85,6 @@ const Card = ({ item: itemProp }: CardProps) => {
             </button>
           </div>
         </div>
-
-        {loading ? (
-          <button
-            type="button"
-            className="mt-6 rounded-md py-2 px-3 w-full text-white shadow-lg bg-blue-500 shadow-blue-200 uppercase text-sm hover:ring-1 hover:ring-blue-500"
-          >
-            Processing...
-          </button>
-        ) : (
-          <button
-            type="button"
-            className="mt-6 rounded-md py-2 px-3 w-full text-white shadow-lg bg-blue-500 shadow-blue-200 uppercase text-sm hover:ring-1 hover:ring-blue-500"
-            onClick={checkout}
-          >
-            Checkout
-          </button>
-        )}
       </div>
     </div>
   );

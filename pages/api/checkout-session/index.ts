@@ -1,9 +1,12 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import Stripe from "stripe";
+import { CartProduct } from "utils/CartContext";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2022-11-15",
 });
+
+export type Cart = CartProduct[];
 
 export type Item = {
   id: number;
@@ -19,35 +22,37 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const { item }: { item: Item } = req.body;
+    const { cart }: { cart: Cart } = req.body;
 
-    if (!item) {
+    if (!cart) {
       return res
         .status(404)
-        .json({ statusCode: 404, message: "Bar type not found" });
+        .json({ statusCode: 404, message: "Cart not found" });
     }
+
+    const lineItems = cart.map((item) => {
+      return {
+        price_data: {
+          currency: "usd",
+          product_data: {
+            images: [item.image],
+            name: item.name,
+          },
+          unit_amount: itemIdsToPrice[item.id] * 100, // to convert into cents
+        },
+        // description: item.description,
+        quantity: item.quantity,
+      };
+    });
 
     try {
       const params: Stripe.Checkout.SessionCreateParams = {
         payment_method_types: ["card"],
         mode: "payment",
         metadata: {
-          images: item.image,
+          images: cart[0].image,
         },
-        line_items: [
-          {
-            price_data: {
-              currency: "usd",
-              product_data: {
-                images: [item.image],
-                name: item.name,
-              },
-              unit_amount: itemIdsToPrice[item.id] * 100, // to convert into cents
-            },
-            // description: item.description,
-            quantity: item.quantity,
-          },
-        ],
+        line_items: lineItems,
         success_url: `${req.headers.origin}?status=success&session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}?status=cancelled`,
       };
