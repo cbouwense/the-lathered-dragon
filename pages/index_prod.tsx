@@ -80,16 +80,39 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-semibold text-center mt-10 text-black-400">
-        The Lathered Dragon
-      </h1>
-      <div className="text-center mt-10">
-        <h2 className="text-2xl font-semibold text-black-400">Coming Soon!</h2>
-        <p className="text-gray-400 mt-4">
-          In the meantime, feel free to email order@thelathereddragon.com to get
-          some soap!
-        </p>
-      </div>
+      <Head>
+        <title>The Lathered Dragon</title>
+        <meta name="description" content="Soap for the modern reptile." />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main>
+        <h1 className="text-3xl font-semibold text-center mt-10 text-gray-400">
+          The Lathered Dragon
+        </h1>
+        {query.status === "cancelled" && <CheckoutCancelled />}
+        {query.status === "success" && <CheckoutSuccess />}
+        {loading ? (
+          <button
+            type="button"
+            className="mt-6 rounded-md py-2 px-3 w-64 text-white shadow-lg bg-blue-500 shadow-blue-200 uppercase text-sm hover:ring-1 hover:ring-blue-500"
+          >
+            Processing...
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="mt-6 rounded-md py-2 px-3 w-64 text-white shadow-lg bg-blue-500 shadow-blue-200 uppercase text-sm hover:ring-1 hover:ring-blue-500"
+            onClick={checkout}
+          >
+            Checkout
+          </button>
+        )}
+        <div className="grid grid-cols-4 gap-4 mt-10">
+          {items.map((item) => (
+            <Card key={item.id} item={item} />
+          ))}
+        </div>
+      </main>
     </div>
   );
 };
