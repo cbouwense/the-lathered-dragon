@@ -35,7 +35,8 @@ export default async function handler(
             images: [item.image],
             name: item.name,
           },
-          unit_amount: itemIdsToPrice[item.id] * 100, // to convert into cents
+          // Convert the price to cents.
+          unit_amount: itemIdsToPrice[item.id] * 100,
         },
         // description: item.description,
         quantity: item.quantity,

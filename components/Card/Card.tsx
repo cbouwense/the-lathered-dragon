@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { MouseEventHandler, useContext, useState } from "react";
 import { CartContext } from "utils/CartContext";
-import { getStripe } from "utils/getStripe";
-import { postRequest } from "utils/postRequest";
 
 export type Item = {
   id: number;
@@ -31,7 +29,7 @@ const Card = ({ item }: CardProps) => {
   };
 
   return (
-    <div className="mt-8 bg-white shadow-xl rounded-lg ring-1 ring-gray-100 max-w-sm mx-auto relative">
+    <div className="mt-8 bg-amber-600 shadow-2xl rounded-lg ring-2 ring-cyean-500 max-w-sm mx-auto relative">
       <Image
         src={item.image}
         alt={item.name}
@@ -41,8 +39,8 @@ const Card = ({ item }: CardProps) => {
       />
 
       <div className="px-4 py-3">
-        <h5 className="text-xl font-semibold">{item.name}</h5>
-        <p className="text-sm text-gray-400">{item.description}</p>
+        <h5 className="text-2xl text-white font-semibold">{item.name}</h5>
+        <p className="text-md text-white">{item.description}</p>
         <div className="flex items-center justify-between mt-3">
           <h6 className="text-3xl font-bold">${item.price * item.quantity}</h6>
           <div className="flex items-center space-x-3">
