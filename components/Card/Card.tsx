@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MouseEventHandler, useContext, useState } from "react";
+import { MouseEventHandler, useContext } from "react";
 import { CartContext } from "utils/CartContext";
 
 export type Item = {
@@ -29,9 +29,9 @@ const Card = ({ item }: CardProps) => {
   };
 
   return (
-    <div className="mt-8 bg-amber-600 shadow-2xl rounded-lg ring-2 ring-cyean-500 max-w-sm mx-auto relative">
+    <div className="mt-8 bg-dark-tan shadow-2xl rounded-lg ring-2 ring-dark-tan max-w-sm mx-auto relative">
       <Image
-        src={item.image}
+        src="/logo2.png"
         alt={item.name}
         height="300"
         width="300"
@@ -39,8 +39,8 @@ const Card = ({ item }: CardProps) => {
       />
 
       <div className="px-4 py-3">
-        <h5 className="text-2xl text-white font-semibold">{item.name}</h5>
-        <p className="text-md text-white">{item.description}</p>
+        <h5 className="text-2xl text-dark-blue font-semibold">{item.name}</h5>
+        <p className="text-md text-dark-blue">{item.description}</p>
         <div className="flex items-center justify-between mt-3">
           <h6 className="text-3xl font-bold">${item.price * item.quantity}</h6>
           <div className="flex items-center space-x-3">
@@ -61,9 +61,7 @@ const Card = ({ item }: CardProps) => {
                 />
               </svg>
             </button>
-
             <span className="quantity">{productQuantity}</span>
-
             <button
               className="increase__quantity p-1 rounded-full ring-1 ring-gray-200"
               onClick={increaseQuantity}
