@@ -1,48 +1,5 @@
-import { Item } from "@/components/Card/Card";
+import { Item, items } from "@/pages/data";
 import { createContext, useState } from "react";
-
-const items: Item[] = [
-  {
-    id: 1,
-    name: "Coffee",
-    image:
-      "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
-    price: 5,
-    description:
-      "Rich, dark, and with a hint of vanilla. This scented bar is made with real, fresh brewed coffee.",
-    quantity: 1,
-  },
-  {
-    id: 2,
-    name: "Lavender",
-    image:
-      "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
-    price: 5,
-    description:
-      "A calming scent that is perfect for unwinding after a long day. This scent relaxes the mind and body.",
-    quantity: 1,
-  },
-  {
-    id: 3,
-    name: "Spruce",
-    image:
-      "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
-    price: 5,
-    description:
-      "Spruce up your shower with this fresh, woodsy scent. This scent is perfect for the outdoorsy type or the holidays.",
-    quantity: 1,
-  },
-  {
-    id: 4,
-    name: "Lemon Poppyseed",
-    image:
-      "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
-    price: 5,
-    description:
-      "A fresh splash of citrus and some real poppyseeds for exfoliation.",
-    quantity: 1,
-  },
-];
 
 export type CartContextType = {
   cartProducts: Item[];
@@ -51,7 +8,7 @@ export type CartContextType = {
   removeOneFromCart: (i: number) => void;
   deleteFromCart: (i: number) => void;
   getTotalCost: (i: number) => number;
-  getItemCount: () => number;
+  getTotalItemCount: () => number;
 };
 
 export const CartContext = createContext<CartContextType | null>(null);
@@ -68,11 +25,7 @@ export const CartProvider = ({ children }: CartProviderParams) => {
       (product) => product.id === id
     )?.quantity;
 
-    if (quantity === undefined) {
-      return 0;
-    }
-
-    return quantity;
+    return quantity ?? 0;
   };
 
   const addOneToCart = (id: number) => {
@@ -84,13 +37,12 @@ export const CartProvider = ({ children }: CartProviderParams) => {
         items.find((i) => i.id === id) as Item,
       ]);
     } else {
-      // product is in cart
       setCartProducts(
         cartProducts.map(
           (product) =>
-            product.id === id // if condition
-              ? { ...product, quantity: product.quantity + 1 } // if statement is true
-              : product // if statement is false
+            product.id === id
+              ? { ...product, quantity: (product.quantity ?? 0) + 1 }
+              : product
         )
       );
     }
@@ -105,9 +57,9 @@ export const CartProvider = ({ children }: CartProviderParams) => {
       setCartProducts(
         cartProducts.map(
           (product) =>
-            product.id === id // if condition
-              ? { ...product, quantity: product.quantity - 1 } // if statement is true
-              : product // if statement is false
+            product.id === id
+              ? { ...product, quantity: (product.quantity ?? 0) - 1 }
+              : product
         )
       );
     }
@@ -125,14 +77,14 @@ export const CartProvider = ({ children }: CartProviderParams) => {
     let totalCost = 0;
     cartProducts.map((cartItem) => {
       const productData = items.find((i) => i.id === cartItem.id);
-      totalCost += (productData?.price ?? 0) * cartItem.quantity;
+      totalCost += (productData?.price ?? 0) * (cartItem.quantity ?? 0);
     });
     return totalCost;
   };
 
-  const getItemCount = () => {
+  const getTotalItemCount = () => {
     return cartProducts.reduce((acc, cartItem) => {
-      return acc + cartItem.quantity;
+      return acc + (cartItem.quantity ?? 0);
     }, 0);
   }
 
@@ -143,7 +95,7 @@ export const CartProvider = ({ children }: CartProviderParams) => {
     removeOneFromCart,
     deleteFromCart,
     getTotalCost,
-    getItemCount,
+    getTotalItemCount,
   };
 
   return (

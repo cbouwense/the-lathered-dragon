@@ -1,19 +1,9 @@
+import { Item } from "@/pages/data";
 import Image from "next/image";
 import { MouseEventHandler, useContext } from "react";
 import { CartContext } from "utils/CartContext";
 
-export type Item = {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-  description: string;
-  quantity: number;
-};
-
-export type CardProps = {
-  item: Item;
-};
+export type CardProps = { item: Item };
 
 const Card = ({ item }: CardProps) => {
   const cart = useContext(CartContext);
@@ -25,7 +15,9 @@ const Card = ({ item }: CardProps) => {
   };
 
   const increaseQuantity: MouseEventHandler<HTMLButtonElement> = () => {
-    cart?.addOneToCart(item.id);
+    if (cart === null) return;
+    if (cart.getProductQuantity(item.id) >= item.leftInStock) return;
+    cart.addOneToCart(item.id);
   };
 
   return (
@@ -39,10 +31,13 @@ const Card = ({ item }: CardProps) => {
       />
 
       <div className="px-4 py-3">
-        <h5 className="text-2xl text-dark-slate font-semibold">{item.name}</h5>
+        <div className="flex items-center justify-between">
+          <h5 className="text-2xl text-dark-slate font-semibold">{item.name}</h5>
+          <p className="text-dark-slate">{item.leftInStock} left in stock</p>
+        </div>
         <p className="text-md text-dark-slate">{item.description}</p>
         <div className="flex items-center justify-between mt-3">
-          <h6 className="text-3xl font-bold text-dark-slate">${item.price * item.quantity}</h6>
+          <h6 className="text-3xl font-bold text-dark-slate">${item.price}</h6>
           <div className="flex items-center space-x-3">
             <button
               className="decrease__quantity p-1 rounded-full ring-1 ring-gray-200"

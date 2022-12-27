@@ -36,9 +36,8 @@ export default async function handler(
             name: item.name,
           },
           // Convert the price to cents.
-          unit_amount: itemIdsToPrice[item.id] * 100,
+          unit_amount: item.price * 100,
         },
-        // description: item.description,
         quantity: item.quantity,
       };
     });
@@ -50,6 +49,20 @@ export default async function handler(
         metadata: {
           images: cart[0].image,
         },
+        shipping_address_collection: {allowed_countries: ['US', 'CA']},
+        shipping_options: [
+          {
+            shipping_rate_data: {
+              type: 'fixed_amount',
+              fixed_amount: {amount: 500, currency: 'usd'},
+              display_name: 'Estimated Shipping',
+              delivery_estimate: {
+                minimum: {unit: 'business_day', value: 5},
+                maximum: {unit: 'business_day', value: 7},
+              },
+            },
+          },
+        ],
         line_items: lineItems,
         success_url: `${req.headers.origin}?status=success&session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}?status=cancelled`,
@@ -67,11 +80,4 @@ export default async function handler(
     res.setHeader("Allow", "POST");
     res.status(405).end("Method Not Allowed");
   }
-}
-
-const itemIdsToPrice: Record<number, number> = {
-  1: 5,
-  2: 5,
-  3: 5,
-  4: 5,
 };
