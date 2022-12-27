@@ -28,7 +28,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "A calming scent that is perfect for unwinding after a long day. This scent relaxes the mind and body.",
-    leftInStock: 4,
+    leftInStock: 2,
     quantity: 1,
   },
   {
@@ -61,7 +61,17 @@ export const items: Item[] = [
     price: 5,
     description:
       "Mild and homey.",
-    leftInStock: 5,
+    leftInStock: 2,
+    quantity: 1,
+  },
+  {
+    id: 6,
+    name: "Vanilla",
+    image:
+      "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
+    price: 5,
+    description: "Mild scent of warm vanilla sugar.",
+    leftInStock: 8,
     quantity: 1,
   },
 ];
