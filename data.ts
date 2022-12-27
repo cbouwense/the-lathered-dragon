@@ -17,7 +17,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Rich, dark, and with a hint of vanilla. This scented bar is made with real, fresh brewed coffee.",
-    leftInStock: 2,
+    leftInStock: 1,
     quantity: 1,
   },
   {
@@ -28,7 +28,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "A calming scent that is perfect for unwinding after a long day. This scent relaxes the mind and body.",
-    leftInStock: 2,
+    leftInStock: 1,
     quantity: 1,
   },
   {
@@ -39,7 +39,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Spruce up your shower with this fresh, woodsy scent. This scent is perfect for the outdoorsy type or the holidays.",
-    leftInStock: 4,
+    leftInStock: 3,
     quantity: 1,
   },
   {
@@ -61,7 +61,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Mild and homey.",
-    leftInStock: 2,
+    leftInStock: 1,
     quantity: 1,
   },
   {
