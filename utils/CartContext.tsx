@@ -1,4 +1,4 @@
-import { Item, items } from "@/pages/data";
+import { Item, items } from "data";
 import { createContext, useState } from "react";
 
 export type CartContextType = {

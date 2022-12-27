@@ -1,4 +1,4 @@
-import { Item } from "@/pages/data";
+import { Item } from "data";
 import Image from "next/image";
 import { MouseEventHandler, useContext } from "react";
 import { CartContext } from "utils/CartContext";
