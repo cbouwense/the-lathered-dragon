@@ -39,10 +39,10 @@ const Card = ({ item }: CardProps) => {
       />
 
       <div className="px-4 py-3">
-        <h5 className="text-2xl text-dark-blue font-semibold">{item.name}</h5>
-        <p className="text-md text-dark-blue">{item.description}</p>
+        <h5 className="text-2xl text-dark-slate font-semibold">{item.name}</h5>
+        <p className="text-md text-dark-slate">{item.description}</p>
         <div className="flex items-center justify-between mt-3">
-          <h6 className="text-3xl font-bold">${item.price * item.quantity}</h6>
+          <h6 className="text-3xl font-bold text-dark-slate">${item.price * item.quantity}</h6>
           <div className="flex items-center space-x-3">
             <button
               className="decrease__quantity p-1 rounded-full ring-1 ring-gray-200"
@@ -50,7 +50,7 @@ const Card = ({ item }: CardProps) => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 text-gray-500"
+                className="h-6 w-6 text-dark-slate"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -61,14 +61,14 @@ const Card = ({ item }: CardProps) => {
                 />
               </svg>
             </button>
-            <span className="quantity">{productQuantity}</span>
+            <span className="quantity text-xl">{productQuantity}</span>
             <button
               className="increase__quantity p-1 rounded-full ring-1 ring-gray-200"
               onClick={increaseQuantity}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 text-gray-500"
+                className="h-6 w-6 text-dark-slate"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >

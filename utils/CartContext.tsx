@@ -51,6 +51,7 @@ export type CartContextType = {
   removeOneFromCart: (i: number) => void;
   deleteFromCart: (i: number) => void;
   getTotalCost: (i: number) => number;
+  getItemCount: () => number;
 };
 
 export const CartContext = createContext<CartContextType | null>(null);
@@ -129,6 +130,12 @@ export const CartProvider = ({ children }: CartProviderParams) => {
     return totalCost;
   };
 
+  const getItemCount = () => {
+    return cartProducts.reduce((acc, cartItem) => {
+      return acc + cartItem.quantity;
+    }, 0);
+  }
+
   const contextValue = {
     cartProducts,
     getProductQuantity,
@@ -136,6 +143,7 @@ export const CartProvider = ({ children }: CartProviderParams) => {
     removeOneFromCart,
     deleteFromCart,
     getTotalCost,
+    getItemCount,
   };
 
   return (

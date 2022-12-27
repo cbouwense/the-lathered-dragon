@@ -8,12 +8,10 @@ const CheckoutButton = () => {
   const cart = useContext(CartContext);
 
   const checkout = async () => {
-    if (cart?.cartProducts.length === 0) return;
-    if (loading) return;
+    if (cart?.cartProducts.length === 0 || loading) return;
 
     setLoading(true);
 
-    console.log(cart);
     const response = await postRequest("/api/checkout-session", {
       cart: cart?.cartProducts,
     });
@@ -37,7 +35,7 @@ const CheckoutButton = () => {
       type="button"
       className="text-dark-blue bg-dark-tan focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
     >
-      <span>Cart ({cart?.cartProducts.length ?? 0})</span>
+      <span>Cart ({cart?.getItemCount()})</span>
     </button>
   )
 };
