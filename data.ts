@@ -17,7 +17,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Rich, dark, and with a hint of vanilla. This scented bar is made with real, fresh brewed coffee.",
-    leftInStock: 1,
+    leftInStock: 0,
     quantity: 1,
   },
   {
@@ -28,7 +28,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "A calming scent that is perfect for unwinding after a long day. This scent relaxes the mind and body.",
-    leftInStock: 1,
+    leftInStock: 0,
     quantity: 1,
   },
   {
@@ -39,7 +39,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Spruce up your shower with this fresh, woodsy scent. This scent is perfect for the outdoorsy type or the holidays.",
-    leftInStock: 3,
+    leftInStock: 2,
     quantity: 1,
   },
   {
@@ -50,7 +50,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "A fresh splash of citrus and some real poppyseeds for exfoliation.",
-    leftInStock: 2,
+    leftInStock: 1,
     quantity: 1,
   },
   {
@@ -61,7 +61,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Mild and homey.",
-    leftInStock: 1,
+    leftInStock: 0,
     quantity: 1,
   },
   {
@@ -71,7 +71,7 @@ export const items: Item[] = [
       "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
     price: 5,
     description: "Mild scent of warm vanilla sugar.",
-    leftInStock: 8,
+    leftInStock: 7,
     quantity: 1,
   },
 ];
