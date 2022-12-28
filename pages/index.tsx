@@ -14,6 +14,9 @@ const Home: NextPage = () => {
       </Head>
       <main className="py-5 bg-tan">
         <Navbar />
+        <video autoPlay muted loop className="fixed top-0 right-0 w-screen h-auto">
+          <source src="head.mp4" type="video/mp4" />
+        </video>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 py-16 box-border">
           {items.map((item) => (
             <Card key={item.id} item={item} />
