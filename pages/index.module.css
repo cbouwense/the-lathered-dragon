@@ -1,3 +1,13 @@
+.testimonials {
+  margin-top: calc(calc(100vw * 0.106) * -0.25);
+  margin-bottom: calc(calc(100vw * 0.106) * -1)
+}
+
+.ingredients {
+  margin-top: calc(calc(100vw * 0.106));
+  margin-bottom: calc(calc(100vw * 0.106) * -1)
+}
+
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
