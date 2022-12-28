@@ -21,7 +21,7 @@ const Card = ({ item }: CardProps) => {
   };
 
   return (
-    <div className="mt-8 bg-dark-tan shadow-2xl rounded-lg ring-2 ring-dark-tan max-w-sm mx-auto relative">
+    <div className="mt-8 bg-dark-tan shadow-2xl rounded-lg ring-2 ring-tan max-w-sm mx-auto relative">
       <Image
         src="/logo2.png"
         alt={item.name}
@@ -40,7 +40,7 @@ const Card = ({ item }: CardProps) => {
           <h6 className="text-3xl font-bold text-dark-slate">${item.price}</h6>
           <div className="flex items-center space-x-3">
             <button
-              className="decrease__quantity p-1 rounded-full ring-1 ring-gray-200"
+              className="decrease__quantity p-1 rounded-full ring-1 ring-gray-200 bg-gradient-radial from-dark-tan to-tan"
               onClick={decreaseQuantity}
             >
               <svg
@@ -58,7 +58,7 @@ const Card = ({ item }: CardProps) => {
             </button>
             <span className="quantity text-xl">{productQuantity}</span>
             <button
-              className="increase__quantity p-1 rounded-full ring-1 ring-gray-200"
+              className="increase__quantity p-1 rounded-full ring-1 ring-gray-200 bg-gradient-radial from-dark-tan to-tan"
               onClick={increaseQuantity}
             >
               <svg

@@ -15,6 +15,9 @@ module.exports = {
         'dark-tan': '#ecb782',
         'light-black': '#2c2825',
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      }
     },
   },
   plugins: []
