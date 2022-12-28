@@ -17,34 +17,28 @@ const testimonials: Testimonial[] = [
 ];
 
 const VideoBanner = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTestimonialIndex((p) => {
-        console.log(p)
-        return (p + 1) % testimonials.length
-      })
+      setTestimonialIndex((p) => (p + 1) % testimonials.length)
+      videoRef.current?.load();
+      videoRef.current?.play();
     }, 5000);
 
     return () => { clearInterval(timer) }
   }, []);
 
+  useEffect(() => {
+    console.log(testimonialIndex)
+  }, [testimonialIndex])
+
   return (
-    <div className="relative bg-light-black h-[88vh] w-full">
-      <video autoPlay muted loop className="object-cover w-full h-full opacity-50">
-        <source src="head.mp4" type="video/mp4" />
+    <div className="h-[80vh] w-full flex justify-center z-10">
+      <video ref={videoRef} autoPlay muted loop className="object-cover w-full h-full">
+        <source src={`making-soap-raw${testimonialIndex+2}.mp4`} type="video/mp4" />
       </video>
-      <div className="absolute flex align-center justify-center top-0 left-0 w-full h-full">
-        <div className="absolute bottom-16 w-3/4">
-          <h1 className="text-5xl text-white">
-            {testimonials[testimonialIndex].text}
-          </h1>
-          <p className="text-2xl text-white">
-            - {testimonials[testimonialIndex].person}
-          </p>
-        </div>
-      </div>
     </div>
   );
 };
