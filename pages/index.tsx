@@ -17,13 +17,14 @@ const Home: NextPage = () => {
       </Head>
       <main className="p-0 bg-gradient-radial from-tan to-dark-tan">
         <Navbar />
-        <VideoBanner videoNumber={3} />
+        <VideoBanner />
         <div className={`${styles.testimonials} relative w-full h-[65vh]`}>
           <div className="bg-gradient-radial from-dark-slate to-light-black w-full h-full absolute z-10 -skew-y-6 flex justify-center" />
           <div className="container mx-auto h-full flex flex-col items-center justify-center gap-6 p-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white z-20">The talk of the town</h1>
-            <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-white z-20">"FABULOUS! I have itchy dry skin when it gets cold and this actually helps." - Jen</p>
             <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-white z-20">"We absolutely love it. I will definitely be ordering it again." - Trent</p>
+            <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-white z-20">"FABULOUS! The moisturizing properties are superior. Better than any other soap I have tried - handmade or commercial." - Jen</p>
+            <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-white z-20">"It's good s***." - Travis</p>
           </div>
         </div>
         <br />
