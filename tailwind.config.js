@@ -13,6 +13,7 @@ module.exports = {
         'dark-slate': '#373d45',
         'tan': '#ece1c8',
         'dark-tan': '#ecb782',
+        'light-black': '#2c2825',
       },
     },
   },
