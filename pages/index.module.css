@@ -1,5 +1,5 @@
 .testimonials {
-  margin-top: calc(calc(100vw * 0.106) * -0.5);
+  margin-top: calc(calc(100vw * 0.106) * -0.25);
   margin-bottom: calc(calc(100vw * 0.106) * -1)
 }
 
