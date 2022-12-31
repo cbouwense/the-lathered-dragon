@@ -50,7 +50,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "A fresh splash of citrus and some real poppyseeds for exfoliation.",
-    leftInStock: 1,
+    leftInStock: 0,
     quantity: 1,
   },
   {
@@ -71,7 +71,7 @@ export const items: Item[] = [
       "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
     price: 5,
     description: "Mild scent of warm vanilla sugar.",
-    leftInStock: 7,
+    leftInStock: 6,
     quantity: 1,
   },
 ];
