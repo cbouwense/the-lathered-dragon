@@ -39,7 +39,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Spruce up your shower with this fresh, woodsy scent. This scent is perfect for the outdoorsy type or the holidays.",
-    leftInStock: 2,
+    leftInStock: 1,
     quantity: 1,
   },
   {
@@ -71,7 +71,7 @@ export const items: Item[] = [
       "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
     price: 5,
     description: "Mild scent of warm vanilla sugar.",
-    leftInStock: 6,
+    leftInStock: 5,
     quantity: 1,
   },
 ];
