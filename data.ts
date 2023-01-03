@@ -39,7 +39,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Spruce up your shower with this fresh, woodsy scent. This scent is perfect for the outdoorsy type or the holidays.",
-    leftInStock: 1,
+    leftInStock: 0,
     quantity: 1,
   },
   {
