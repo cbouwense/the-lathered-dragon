@@ -65,7 +65,7 @@ export const items: Item[] = [
     leftInStock: 0,
     quantity: 1,
     backInStock: {
-      date: DateTime.local(2023, 1, 18),
+      date: DateTime.local(2023, 1, 20),
       quantity: 10,
     },
   },
