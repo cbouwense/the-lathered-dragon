@@ -9,6 +9,7 @@ export type CartContextType = {
   deleteFromCart: (i: number) => void;
   getTotalCost: (i: number) => number;
   getTotalItemCount: () => number;
+  getDaysUntilBackInStock: (i: number) => number;
 };
 
 export const CartContext = createContext<CartContextType | null>(null);
@@ -38,11 +39,10 @@ export const CartProvider = ({ children }: CartProviderParams) => {
       ]);
     } else {
       setCartProducts(
-        cartProducts.map(
-          (product) =>
-            product.id === id
-              ? { ...product, quantity: (product.quantity ?? 0) + 1 }
-              : product
+        cartProducts.map((product) =>
+          product.id === id
+            ? { ...product, quantity: (product.quantity ?? 0) + 1 }
+            : product
         )
       );
     }
@@ -55,11 +55,10 @@ export const CartProvider = ({ children }: CartProviderParams) => {
       deleteFromCart(id);
     } else {
       setCartProducts(
-        cartProducts.map(
-          (product) =>
-            product.id === id
-              ? { ...product, quantity: (product.quantity ?? 0) - 1 }
-              : product
+        cartProducts.map((product) =>
+          product.id === id
+            ? { ...product, quantity: (product.quantity ?? 0) - 1 }
+            : product
         )
       );
     }
@@ -86,7 +85,12 @@ export const CartProvider = ({ children }: CartProviderParams) => {
     return cartProducts.reduce((acc, cartItem) => {
       return acc + (cartItem.quantity ?? 0);
     }, 0);
-  }
+  };
+
+  const getDaysUntilBackInStock = (id: number) => {
+    const productData = items.find((i) => i.id === id);
+    return Math.floor(productData?.backInStock?.date.diffNow("days").days ?? 0);
+  };
 
   const contextValue = {
     cartProducts,
@@ -96,6 +100,7 @@ export const CartProvider = ({ children }: CartProviderParams) => {
     deleteFromCart,
     getTotalCost,
     getTotalItemCount,
+    getDaysUntilBackInStock,
   };
 
   return (
