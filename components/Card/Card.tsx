@@ -38,7 +38,12 @@ const Card = ({ item }: CardProps) => {
             {item.name}
           </h5>
 
-          <p className="text-dark-slate">{item.leftInStock} left in stock</p>
+          {item.backInStock !== undefined && (
+            <p className="text-dark-slate">{daysUntilBackInStock} days left!</p>
+          )}
+          {item.backInStock === undefined && (
+            <p className="text-dark-slate">{item.leftInStock} left in stock</p>
+          )}
         </div>
         <p className="text-md text-dark-slate">{item.description}</p>
         <div className="flex items-center justify-between mt-3">
