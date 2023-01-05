@@ -26,7 +26,7 @@ const Home: NextPage = () => {
         />
         <div className={`${styles.testimonials} relative w-full h-[65vh]`}>
           <div className="bg-gradient-radial from-dark-slate to-light-black w-full h-full absolute z-10 -skew-y-6 flex justify-center" />
-          <div className="container mx-auto h-full flex flex-col items-center justify-evenly p-6">
+          <div className="container mx-auto h-full flex flex-col items-center justify-center gap-12 p-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white z-20">
               The talk of the town
             </h1>
@@ -46,7 +46,7 @@ const Home: NextPage = () => {
         <br className="h-4" />
         <div className={`${styles.ingredients} relative w-full h-[65vh]`}>
           <div className="bg-gradient-radial from-dark-slate to-light-black w-full h-full absolute z-10 -skew-y-6 flex justify-center" />
-          <div className="container mx-auto w-full h-full flex flex-col items-center justify-evenly p-6">
+          <div className="container mx-auto w-full h-full flex flex-col items-center justify-center gap-3 p-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white z-20 mb-10">
               Delightfully real ingredients
             </h1>
