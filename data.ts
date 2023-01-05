@@ -1,3 +1,5 @@
+import { DateTime } from "luxon";
+
 export type Item = {
   id: number;
   name: string;
@@ -6,6 +8,10 @@ export type Item = {
   description: string;
   quantity?: number;
   leftInStock: number;
+  backInStock?: {
+    date: DateTime;
+    quantity: number;
+  };
 };
 
 export const items: Item[] = [
@@ -30,6 +36,10 @@ export const items: Item[] = [
       "A calming scent that is perfect for unwinding after a long day. This scent relaxes the mind and body.",
     leftInStock: 0,
     quantity: 1,
+    backInStock: {
+      date: DateTime.local(2023, 1, 19),
+      quantity: 10,
+    },
   },
   {
     id: 3,
@@ -52,6 +62,10 @@ export const items: Item[] = [
       "A fresh splash of citrus and some real poppyseeds for exfoliation.",
     leftInStock: 0,
     quantity: 1,
+    backInStock: {
+      date: DateTime.local(2023, 1, 17),
+      quantity: 10,
+    },
   },
   {
     id: 5,
@@ -59,8 +73,7 @@ export const items: Item[] = [
     image:
       "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
     price: 5,
-    description:
-      "Mild and homey.",
+    description: "Mild and homey.",
     leftInStock: 0,
     quantity: 1,
   },
@@ -73,5 +86,19 @@ export const items: Item[] = [
     description: "Mild scent of warm vanilla sugar.",
     leftInStock: 5,
     quantity: 1,
+  },
+  {
+    id: 7,
+    name: "Eucalyptus",
+    image:
+      "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
+    price: 5,
+    description: "A fresh, clean scent that is perfect for the shower.",
+    leftInStock: 0,
+    quantity: 1,
+    backInStock: {
+      date: DateTime.local(2023, 1, 18),
+      quantity: 10,
+    },
   },
 ];
