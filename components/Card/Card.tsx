@@ -23,7 +23,7 @@ const Card = ({ item }: CardProps) => {
   };
 
   return (
-    <div className="mt-8 bg-dark-tan shadow-2xl rounded-lg ring-2 ring-tan max-w-sm mx-auto relative">
+    <div className="mt-8 bg-dark-tan shadow-2xl rounded-lg ring-2 ring-tan max-w-sm w-full mx-auto relative">
       <Image
         src="/logo2.png"
         alt={item.name}
@@ -88,9 +88,7 @@ const Card = ({ item }: CardProps) => {
             </p>
           )}
           {item.leftInStock === 0 && item.backInStock === undefined && (
-            <p className="text-dark-slate text-xl">
-              {item.leftInStock} left in stock
-            </p>
+            <p className="text-dark-slate text-xl">Sorry, sold out!</p>
           )}
         </div>
       </div>

@@ -1,11 +1,11 @@
 .testimonials {
   margin-top: calc(calc(100vw * 0.106) * -0.25);
-  margin-bottom: calc(calc(100vw * 0.106) * -1)
+  margin-bottom: calc(calc(100vw * 0.106) * -1);
 }
 
 .ingredients {
-  margin-top: calc(calc(100vw * 0.106));
-  margin-bottom: calc(calc(100vw * 0.106) * -1)
+  margin-top: calc(calc(100vw * 0.106) * 1.5);
+  margin-bottom: calc(calc(100vw * 0.106) * -1);
 }
 
 .container {
