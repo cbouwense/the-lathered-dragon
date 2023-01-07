@@ -70,17 +70,6 @@ export const items: Item[] = [
     },
   },
   {
-    id: 1,
-    name: "Coffee",
-    image:
-      "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
-    price: 5,
-    description:
-      "Rich, dark, and with a hint of vanilla. This scented bar is made with real, fresh brewed coffee.",
-    leftInStock: 0,
-    quantity: 1,
-  },
-  {
     id: 3,
     name: "Spruce",
     image:
@@ -88,6 +77,21 @@ export const items: Item[] = [
     price: 5,
     description:
       "Spruce up your shower with this fresh, woodsy scent. This scent is perfect for the outdoorsy type or the holidays.",
+    leftInStock: 0,
+    quantity: 1,
+    backInStock: {
+      date: DateTime.local(2023, 2, 14),
+      quantity: 10,
+    },
+  },
+  {
+    id: 1,
+    name: "Coffee",
+    image:
+      "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
+    price: 5,
+    description:
+      "Rich, dark, and with a hint of vanilla. This scented bar is made with real, fresh brewed coffee.",
     leftInStock: 0,
     quantity: 1,
   },

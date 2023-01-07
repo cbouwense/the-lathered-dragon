@@ -84,7 +84,7 @@ const Card = ({ item }: CardProps) => {
           )}
           {item.leftInStock === 0 && item.backInStock !== undefined && (
             <p className="text-dark-slate text-xl">
-              {daysUntilBackInStock} days left!
+              More available in {daysUntilBackInStock} days!
             </p>
           )}
           {item.leftInStock === 0 && item.backInStock === undefined && (
