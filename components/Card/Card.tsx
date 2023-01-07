@@ -10,7 +10,6 @@ const Card = ({ item }: CardProps) => {
 
   const productQuantity = cart?.getProductQuantity(item.id) ?? 0;
   const daysUntilBackInStock = cart?.getDaysUntilBackInStock(item.id);
-  console.log({ daysUntilBackInStock });
 
   const decreaseQuantity: MouseEventHandler<HTMLButtonElement> = () => {
     cart?.removeOneFromCart(item.id);
@@ -32,7 +31,7 @@ const Card = ({ item }: CardProps) => {
         className="rounded-tl-lg rounded-tr-lg object-cover w-full"
       />
 
-      <div className="px-4 py-3">
+      <div className="flex flex-col justify-between px-4 py-3">
         <div className="flex items-center justify-between">
           <h5 className="text-2xl text-dark-slate font-semibold">
             {item.name}
