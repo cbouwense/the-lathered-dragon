@@ -14,14 +14,14 @@ export type Item = {
   };
 };
 
-enum UnitOfMeasurement {
+export enum UnitOfMeasurement {
   OUNCES,
   FLUID_OUNCES,
   MILLILITERS,
   GRAMS,
 }
 
-type Product = {
+export type Product = {
   id: number;
   name: string;
   description?: string;
@@ -30,29 +30,20 @@ type Product = {
   priceInCents: number;
 };
 
-type Ingredient = {
+export type Ingredient = {
   name: string;
   amount: number;
   unitOfMeasurement: UnitOfMeasurement;
   product?: Product;
 };
 
-type Batch = {
+export type Batch = {
   id: number;
   pourDate: DateTime;
   cureDate?: DateTime;
   name?: string;
   ingredients: Ingredient[];
 };
-
-// type Query = {
-//   products: [Product!]!;
-//   product(id: ID!): Product;
-//   ingredients: [Ingredient!]!;
-//   ingredient(id: ID!): Ingredient;
-//   batches: [Batch!]!;
-//   batch(id: ID!): Batch;
-// };
 
 export const products: Product[] = [
   {
