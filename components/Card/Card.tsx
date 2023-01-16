@@ -12,12 +12,16 @@ const Card = ({ item }: CardProps) => {
   const daysUntilBackInStock = cart?.getDaysUntilBackInStock(item.id);
 
   const someBarsAreInStock =
-    daysUntilBackInStock !== undefined && daysUntilBackInStock <= 0;
-  item.leftInStock > 0;
+    item.backInStock === undefined && 
+    item.leftInStock > 0;
   const someBarsAreCuring =
-    daysUntilBackInStock !== undefined && daysUntilBackInStock > 0;
+    !someBarsAreInStock &&
+    daysUntilBackInStock !== undefined &&
+    daysUntilBackInStock > 0;
   const noBarsCuringOrInStock =
-    item.backInStock === undefined && item.leftInStock === 0;
+    !someBarsAreCuring &&
+    item.backInStock === undefined &&
+    item.leftInStock === 0;
 
   const decreaseQuantity: MouseEventHandler<HTMLButtonElement> = () => {
     cart?.removeOneFromCart(item.id);
@@ -49,44 +53,49 @@ const Card = ({ item }: CardProps) => {
         <div className="flex items-center justify-between mt-3">
           <h6 className="text-3xl font-bold text-dark-slate">${item.price}</h6>
           {someBarsAreInStock && (
-            <div className="flex items-center space-x-3">
-              <button
-                disabled={productQuantity === 0}
-                className="decrease__quantity p-1 rounded-full ring-1 ring-gray-200 bg-gradient-radial from-dark-tan to-tan"
-                onClick={decreaseQuantity}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-dark-slate"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+            <div className="flex flex-col items-end gap-2">
+              <p className="text-dark-slate text-xl">
+                {item.leftInStock} bars in stock!
+              </p>
+              <div className="flex items-center space-x-3">
+                <button
+                  disabled={productQuantity === 0}
+                  className="decrease__quantity p-1 rounded-full ring-1 ring-gray-200 bg-gradient-radial from-dark-tan to-tan"
+                  onClick={decreaseQuantity}
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
-              <span className="quantity text-xl">{productQuantity}</span>
-              <button
-                disabled={productQuantity >= item.leftInStock}
-                className="increase__quantity p-1 rounded-full ring-1 ring-gray-200 bg-gradient-radial from-dark-tan to-tan"
-                onClick={increaseQuantity}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-dark-slate"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-dark-slate"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+                <span className="quantity text-xl">{productQuantity}</span>
+                <button
+                  disabled={productQuantity >= item.leftInStock}
+                  className="increase__quantity p-1 rounded-full ring-1 ring-gray-200 bg-gradient-radial from-dark-tan to-tan"
+                  onClick={increaseQuantity}
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-dark-slate"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           )}
           {someBarsAreCuring && (
