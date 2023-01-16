@@ -11,6 +11,14 @@ const Card = ({ item }: CardProps) => {
   const productQuantity = cart?.getProductQuantity(item.id) ?? 0;
   const daysUntilBackInStock = cart?.getDaysUntilBackInStock(item.id);
 
+  const someBarsAreInStock =
+    daysUntilBackInStock !== undefined && daysUntilBackInStock <= 0;
+  item.leftInStock > 0;
+  const someBarsAreCuring =
+    daysUntilBackInStock !== undefined && daysUntilBackInStock > 0;
+  const noBarsCuringOrInStock =
+    item.backInStock === undefined && item.leftInStock === 0;
+
   const decreaseQuantity: MouseEventHandler<HTMLButtonElement> = () => {
     cart?.removeOneFromCart(item.id);
   };
@@ -40,7 +48,7 @@ const Card = ({ item }: CardProps) => {
         <p className="text-md text-dark-slate">{item.description}</p>
         <div className="flex items-center justify-between mt-3">
           <h6 className="text-3xl font-bold text-dark-slate">${item.price}</h6>
-          {item.leftInStock > 0 && (
+          {someBarsAreInStock && (
             <div className="flex items-center space-x-3">
               <button
                 disabled={productQuantity === 0}
@@ -81,12 +89,12 @@ const Card = ({ item }: CardProps) => {
               </button>
             </div>
           )}
-          {item.leftInStock === 0 && item.backInStock !== undefined && (
+          {someBarsAreCuring && (
             <p className="text-dark-slate text-xl">
               More available in {daysUntilBackInStock} days!
             </p>
           )}
-          {item.leftInStock === 0 && item.backInStock === undefined && (
+          {noBarsCuringOrInStock && (
             <p className="text-dark-slate text-xl">Sorry, sold out!</p>
           )}
         </div>
