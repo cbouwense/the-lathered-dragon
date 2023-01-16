@@ -22,6 +22,9 @@ const Card = ({ item }: CardProps) => {
     !someBarsAreCuring &&
     item.backInStock === undefined &&
     item.leftInStock === 0;
+  const decrementButtonDisabled = productQuantity === 0;
+  const incrementButtonDisabled = productQuantity >= item.leftInStock;
+  const buttonStyles = `p-1 rounded-full ring-1 ring-gray-200 bg-gradient-radial from-dark-tan to-tan`;
 
   const decreaseQuantity: MouseEventHandler<HTMLButtonElement> = () => {
     cart?.removeOneFromCart(item.id);
@@ -59,8 +62,8 @@ const Card = ({ item }: CardProps) => {
               </p>
               <div className="flex items-center space-x-3">
                 <button
-                  disabled={productQuantity === 0}
-                  className="decrease__quantity p-1 rounded-full ring-1 ring-gray-200 bg-gradient-radial from-dark-tan to-tan"
+                  disabled={decrementButtonDisabled}
+                  className={decrementButtonDisabled ? `${buttonStyles} cursor-not-allowed` : buttonStyles}
                   onClick={decreaseQuantity}
                 >
                   <svg
@@ -78,8 +81,8 @@ const Card = ({ item }: CardProps) => {
                 </button>
                 <span className="quantity text-xl">{productQuantity}</span>
                 <button
-                  disabled={productQuantity >= item.leftInStock}
-                  className="increase__quantity p-1 rounded-full ring-1 ring-gray-200 bg-gradient-radial from-dark-tan to-tan"
+                  disabled={incrementButtonDisabled}
+                  className={incrementButtonDisabled ? `${buttonStyles} cursor-not-allowed` : buttonStyles}
                   onClick={increaseQuantity}
                 >
                   <svg
