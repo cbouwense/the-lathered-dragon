@@ -1246,18 +1246,8 @@ export const items: Item[] = [
       "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
     price: 5,
     description:
-      "Playful and fruity, mixed with real poppyseeds. Our pride and joy, and Rachel's personal favorite!",
+      "Playful and fruity, mixed with real poppyseeds. Rachel's personal favorite for hand washing!",
     leftInStock: 9,
-    quantity: 1,
-  },
-  {
-    id: 6,
-    name: "Hint of Vanilla",
-    image:
-      "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
-    price: 5,
-    description: "Mildly scented, with notes of warm vanilla sugar.",
-    leftInStock: 5,
     quantity: 1,
   },
   {
@@ -1270,10 +1260,6 @@ export const items: Item[] = [
       "Serene and unmistakable, Rachel and I love Lavender bars for our kitchen hand washing.",
     leftInStock: 10,
     quantity: 1,
-    backInStock: {
-      date: DateTime.local(2023, 1, 19),
-      quantity: 10,
-    },
   },
   {
     id: 7,
@@ -1282,13 +1268,19 @@ export const items: Item[] = [
       "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
     price: 5,
     description:
-      "Bold and invigorating. This is Christian's favorite bar for showering.",
+      "Bold and invigorating. Christian's favorite bar for showering.",
     leftInStock: 9,
     quantity: 1,
-    backInStock: {
-      date: DateTime.local(2023, 1, 20),
-      quantity: 10,
-    },
+  },
+  {
+    id: 6,
+    name: "Hint of Vanilla",
+    image:
+      "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
+    price: 5,
+    description: "Mildly scented, with notes of warm vanilla sugar.",
+    leftInStock: 5,
+    quantity: 1,
   },
   {
     id: 3,
