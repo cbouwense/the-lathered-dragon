@@ -1240,29 +1240,25 @@ export const batches: Batch[] = [
 
 export const items: Item[] = [
   {
-    id: 6,
-    name: "Vanilla",
-    image:
-      "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
-    price: 5,
-    description: "Mild scent of warm vanilla sugar.",
-    leftInStock: 5,
-    quantity: 1,
-  },
-  {
     id: 4,
     name: "Lemon Poppyseed",
     image:
       "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
     price: 5,
     description:
-      "A fresh splash of citrus and some real poppyseeds for exfoliation.",
-    leftInStock: 0,
+      "Playful and fruity, mixed with real poppyseeds. Our pride and joy, and Rachel's personal favorite!",
+    leftInStock: 9,
     quantity: 1,
-    backInStock: {
-      date: DateTime.local(2023, 1, 17),
-      quantity: 10,
-    },
+  },
+  {
+    id: 6,
+    name: "Hint of Vanilla",
+    image:
+      "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
+    price: 5,
+    description: "Mildly scented, with notes of warm vanilla sugar.",
+    leftInStock: 5,
+    quantity: 1,
   },
   {
     id: 2,
@@ -1271,8 +1267,8 @@ export const items: Item[] = [
       "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
     price: 5,
     description:
-      "A calming scent that is perfect for unwinding after a long day. This scent relaxes the mind and body.",
-    leftInStock: 0,
+      "Serene and unmistakable, Rachel and I love Lavender bars for our kitchen hand washing.",
+    leftInStock: 10,
     quantity: 1,
     backInStock: {
       date: DateTime.local(2023, 1, 19),
@@ -1285,8 +1281,9 @@ export const items: Item[] = [
     image:
       "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
     price: 5,
-    description: "A fresh, clean scent that is perfect for the shower.",
-    leftInStock: 0,
+    description:
+      "Bold and invigorating. This is Christian's favorite bar for showering.",
+    leftInStock: 9,
     quantity: 1,
     backInStock: {
       date: DateTime.local(2023, 1, 20),
@@ -1300,8 +1297,8 @@ export const items: Item[] = [
       "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
     price: 5,
     description:
-      "Spruce up your shower with this fresh, woodsy scent. This scent is perfect for the outdoorsy type or the holidays.",
-    leftInStock: 0,
+      "Masculine and refreshing, with notes of eucalyptus. You feel cleaner just smelling this bar.",
+    leftInStock: 10,
     quantity: 1,
     backInStock: {
       date: DateTime.local(2023, 2, 14),
@@ -1325,7 +1322,7 @@ export const items: Item[] = [
     image:
       "https://as1.ftcdn.net/v2/jpg/00/84/18/64/1000_F_84186401_fglD8eOBC8xShCT20U0Y8lRtzc7v6ZLc.jpg",
     price: 5,
-    description: "Mild and homey.",
+    description: "Mild and homey, with hints of ginger.",
     leftInStock: 0,
     quantity: 1,
   },
