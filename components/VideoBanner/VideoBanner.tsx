@@ -1,6 +1,6 @@
 export type VideoBannerProps = {
   videoNumber: number;
-}
+};
 
 const VideoBanner = () => {
   return (

@@ -28,7 +28,7 @@ const CheckoutButton = () => {
     console.warn(error.message);
     setLoading(false);
   };
-  
+
   return (
     <button
       onClick={checkout}
@@ -37,7 +37,7 @@ const CheckoutButton = () => {
     >
       <span>Cart ({cart?.getTotalItemCount()})</span>
     </button>
-  )
+  );
 };
 
 export default CheckoutButton;

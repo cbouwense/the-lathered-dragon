@@ -12,8 +12,7 @@ const Card = ({ item }: CardProps) => {
   const daysUntilBackInStock = cart?.getDaysUntilBackInStock(item.id);
 
   const someBarsAreInStock =
-    item.backInStock === undefined && 
-    item.leftInStock > 0;
+    item.backInStock === undefined && item.leftInStock > 0;
   const someBarsAreCuring =
     !someBarsAreInStock &&
     daysUntilBackInStock !== undefined &&
@@ -63,7 +62,11 @@ const Card = ({ item }: CardProps) => {
               <div className="flex items-center space-x-3">
                 <button
                   disabled={decrementButtonDisabled}
-                  className={decrementButtonDisabled ? `${buttonStyles} cursor-not-allowed` : buttonStyles}
+                  className={
+                    decrementButtonDisabled
+                      ? `${buttonStyles} cursor-not-allowed`
+                      : buttonStyles
+                  }
                   onClick={decreaseQuantity}
                 >
                   <svg
@@ -82,7 +85,11 @@ const Card = ({ item }: CardProps) => {
                 <span className="quantity text-xl">{productQuantity}</span>
                 <button
                   disabled={incrementButtonDisabled}
-                  className={incrementButtonDisabled ? `${buttonStyles} cursor-not-allowed` : buttonStyles}
+                  className={
+                    incrementButtonDisabled
+                      ? `${buttonStyles} cursor-not-allowed`
+                      : buttonStyles
+                  }
                   onClick={increaseQuantity}
                 >
                   <svg

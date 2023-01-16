@@ -49,16 +49,16 @@ export default async function handler(
         metadata: {
           images: cart[0].image,
         },
-        shipping_address_collection: {allowed_countries: ['US', 'CA']},
+        shipping_address_collection: { allowed_countries: ["US", "CA"] },
         shipping_options: [
           {
             shipping_rate_data: {
-              type: 'fixed_amount',
-              fixed_amount: {amount: 500, currency: 'usd'},
-              display_name: 'Estimated Shipping',
+              type: "fixed_amount",
+              fixed_amount: { amount: 500, currency: "usd" },
+              display_name: "Estimated Shipping",
               delivery_estimate: {
-                minimum: {unit: 'business_day', value: 5},
-                maximum: {unit: 'business_day', value: 7},
+                minimum: { unit: "business_day", value: 5 },
+                maximum: { unit: "business_day", value: 7 },
               },
             },
           },
@@ -80,4 +80,4 @@ export default async function handler(
     res.setHeader("Allow", "POST");
     res.status(405).end("Method Not Allowed");
   }
-};
+}

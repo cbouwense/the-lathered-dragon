@@ -10,8 +10,8 @@ const ConfirmationPage: NextPage = () => {
           Thank you for your order!
         </h2>
         <p className="text-gray-800 mt-4">
-          Please check your email for a confirmation of your order. If you have any
-          questions, please email order@thelathereddragon.com.
+          Please check your email for a confirmation of your order. If you have
+          any questions, please email order@thelathereddragon.com.
         </p>
       </main>
     </div>
