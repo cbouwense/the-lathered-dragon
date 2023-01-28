@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <main className="p-0 bg-gradient-radial from-tan to-dark-tan">
         <Navbar />
         <Image
-          src="/stack1.jpeg"
+          src="/pile.jpeg"
           className="max-h-[80vh] w-auto"
           alt="The Lathered Dragon"
           width={1080}
