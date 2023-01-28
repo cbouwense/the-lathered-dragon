@@ -35,7 +35,7 @@ const Card = ({ item }: CardProps) => {
     cart.addOneToCart(item.id);
   };
 
-  const imageSource = item.image ? `/${item.image}` : "/logo2.png";
+  const imageSource = item.image ? `/${item.image}` : "/logo1.png";
 
   return (
     <div className="mt-8 bg-dark-tan shadow-2xl rounded-lg ring-2 ring-tan max-w-sm w-full mx-auto relative">
