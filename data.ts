@@ -1246,7 +1246,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Playful and fruity, mixed with real poppyseeds. Rachel's personal favorite for hand washing!",
-    leftInStock: 9,
+    leftInStock: 8,
     quantity: 1,
   },
   {
@@ -1256,7 +1256,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Serene and unmistakable, Rachel and I love Lavender bars for our kitchen hand washing.",
-    leftInStock: 10,
+    leftInStock: 8,
     quantity: 1,
   },
   {
@@ -1266,7 +1266,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Bold and invigorating. Christian's favorite bar for showering.",
-    leftInStock: 9,
+    leftInStock: 8,
     quantity: 1,
   },
   {
@@ -1275,7 +1275,7 @@ export const items: Item[] = [
     image: "hint_of_vanilla.jpeg",
     price: 5,
     description: "Mildly scented, with notes of warm vanilla sugar.",
-    leftInStock: 5,
+    leftInStock: 4,
     quantity: 1,
   },
   {
@@ -1285,7 +1285,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Masculine and refreshing, with notes of eucalyptus. You feel cleaner just smelling this bar.",
-    leftInStock: 10,
+    leftInStock: 9,
     quantity: 1,
     backInStock: {
       date: DateTime.local(2023, 2, 14),
