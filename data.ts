@@ -181,7 +181,7 @@ export const batches: Batch[] = [
     id: 1,
     pourDate: DateTime.fromISO("2022-07-14"),
     cureDate: DateTime.fromISO("2022-08-04"),
-    name: "Lemon poppyseed and mocha",
+    name: "lemon-poppyseed-and-mocha",
     ingredients: [
       {
         name: "olive oil",
@@ -231,7 +231,7 @@ export const batches: Batch[] = [
     id: 2,
     pourDate: DateTime.fromISO("2022-07-30"),
     cureDate: DateTime.fromISO("2022-09-10"),
-    name: "Candlescience medley",
+    name: "candlescience-medley",
     ingredients: [
       {
         name: "olive oil",
@@ -269,7 +269,7 @@ export const batches: Batch[] = [
     id: 3,
     pourDate: DateTime.fromISO("2022-07-31"),
     cureDate: DateTime.fromISO("2022-09-11"),
-    name: "Essential oil medley",
+    name: "essential-oil-medley",
     ingredients: [
       {
         name: "olive oil",
@@ -307,7 +307,7 @@ export const batches: Batch[] = [
     id: 4,
     pourDate: DateTime.fromISO("2022-08-14"),
     cureDate: DateTime.fromISO("2022-09-25"),
-    name: "Pumpkin spice swirl",
+    name: "pumpkin-spice-swirl",
     ingredients: [
       {
         name: "olive oil",
@@ -363,7 +363,7 @@ export const batches: Batch[] = [
     id: 5,
     pourDate: DateTime.fromISO("2022-09-25"),
     cureDate: DateTime.fromISO("2022-11-04"),
-    name: "Pumpkin spice swirl, apples & maple bourbon",
+    name: "pumpkin-spiceswirl-and-apples-with-maple bourbon",
     ingredients: [
       {
         name: "olive oil",
@@ -401,7 +401,7 @@ export const batches: Batch[] = [
     id: 6,
     pourDate: DateTime.fromISO("2022-09-29"),
     cureDate: DateTime.fromISO("2022-11-08"),
-    name: "Lemon poppyseed 2",
+    name: "lemon-poppyseed-2",
     ingredients: [
       {
         name: "olive oil",
@@ -439,7 +439,7 @@ export const batches: Batch[] = [
     id: 7,
     pourDate: DateTime.fromISO("2022-10-01"),
     cureDate: DateTime.fromISO("2022-11-09"),
-    name: "Fallen leaves and apple",
+    name: "fallen-leaves-and-apple",
     ingredients: [
       {
         name: "olive oil",
@@ -489,7 +489,7 @@ export const batches: Batch[] = [
     id: 8,
     pourDate: DateTime.fromISO("2022-10-02"),
     cureDate: DateTime.fromISO("2022-11-10"),
-    name: "Pumpkin spice 3",
+    name: "pumpkin-spice-3",
     ingredients: [
       {
         name: "olive oil",
@@ -539,7 +539,7 @@ export const batches: Batch[] = [
     id: 9,
     pourDate: DateTime.fromISO("2022-10-06"),
     cureDate: DateTime.fromISO("2022-11-14"),
-    name: "Black coral & moss, black cardamom & cream, oakmoss & amber",
+    name: "black-coral-and-moss-plus-black-cardamom-cream plus-oakmoss-and-amber",
     ingredients: [
       {
         name: "olive oil",
@@ -577,7 +577,7 @@ export const batches: Batch[] = [
     id: 10,
     pourDate: DateTime.fromISO("2022-10-08"),
     cureDate: DateTime.fromISO("2022-11-16"),
-    name: "Pumpkin spice 4",
+    name: "pumpkin-spice-4",
     ingredients: [
       {
         name: "olive oil",
@@ -621,7 +621,7 @@ export const batches: Batch[] = [
     id: 11,
     pourDate: DateTime.fromISO("2022-10-08"),
     cureDate: DateTime.fromISO("2022-11-16"),
-    name: "Black coral & moss, black cardamom & cream, oakmoss & amber",
+    name: "Black-coral-and-moss-plus-black-cardamom-and-cream-plus-oakmoss-and-amber",
     ingredients: [
       {
         name: "olive oil",
@@ -665,7 +665,7 @@ export const batches: Batch[] = [
     id: 12,
     pourDate: DateTime.fromISO("2022-10-10"),
     cureDate: DateTime.fromISO("2022-11-18"),
-    name: "Cypress & bayberry, ginger & spice, clove",
+    name: "cypress-and-bayberry-plus-ginger-and-spice-plus-clove",
     ingredients: [
       {
         name: "olive oil",
@@ -721,7 +721,7 @@ export const batches: Batch[] = [
     id: 13,
     pourDate: DateTime.fromISO("2022-10-23"),
     cureDate: DateTime.fromISO("2022-12-04"),
-    name: "Coffee",
+    name: "coffee",
     ingredients: [
       {
         name: "olive oil",
@@ -783,7 +783,7 @@ export const batches: Batch[] = [
     id: 14,
     pourDate: DateTime.fromISO("2022-10-25"),
     cureDate: DateTime.fromISO("2022-12-06"),
-    name: "Lavender",
+    name: "lavender",
     ingredients: [
       {
         name: "olive oil",
@@ -845,7 +845,7 @@ export const batches: Batch[] = [
     id: 15,
     pourDate: DateTime.fromISO("2022-11-11"),
     cureDate: DateTime.fromISO("2022-12-22"),
-    name: "Spruce",
+    name: "spruce",
     ingredients: [
       {
         name: "olive oil",
@@ -913,7 +913,7 @@ export const batches: Batch[] = [
     id: 16,
     pourDate: DateTime.fromISO("2022-11-13"),
     cureDate: DateTime.fromISO("2022-12-24"),
-    name: "Vanilla",
+    name: "vanilla",
     ingredients: [
       {
         name: "olive oil",
@@ -975,7 +975,7 @@ export const batches: Batch[] = [
     id: 17,
     pourDate: DateTime.fromISO("2022-12-27"),
     cureDate: DateTime.fromISO("2023-01-17"),
-    name: "Lemon poppyseed 3",
+    name: "lemon-poppyseed-3",
     ingredients: [
       {
         name: "olive oil",
@@ -1043,7 +1043,7 @@ export const batches: Batch[] = [
     id: 18,
     pourDate: DateTime.fromISO("2022-12-29"),
     cureDate: DateTime.fromISO("2023-01-19"),
-    name: "Lavender",
+    name: "lavender-2",
     ingredients: [
       {
         name: "olive oil",
@@ -1111,7 +1111,7 @@ export const batches: Batch[] = [
     id: 19,
     pourDate: DateTime.fromISO("2022-12-30"),
     cureDate: DateTime.fromISO("2023-01-20"),
-    name: "Eucalyptus",
+    name: "eucalyptus",
     ingredients: [
       {
         name: "olive oil",
@@ -1179,7 +1179,7 @@ export const batches: Batch[] = [
     id: 20,
     pourDate: DateTime.fromISO("2023-01-06"),
     cureDate: DateTime.fromISO("2023-02-14"),
-    name: "Spruce & eucalyptus",
+    name: "spruce-and-eucalyptus",
     ingredients: [
       {
         name: "olive oil",
@@ -1241,7 +1241,7 @@ export const batches: Batch[] = [
     id: 21,
     pourDate: DateTime.fromISO("2023-02-05"),
     cureDate: DateTime.fromISO("2023-03-19"),
-    name: "Vanilla Latte",
+    name: "vanilla-latte",
     ingredients: [
       {
         name: "olive oil",
