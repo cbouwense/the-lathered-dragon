@@ -1424,7 +1424,7 @@ export const items: Item[] = [
     },
   },
   {
-    id: 1,
+    id: 8,
     name: "Vanilla Latte",
     price: 7,
     description:
@@ -1433,6 +1433,19 @@ export const items: Item[] = [
     quantity: 1,
     backInStock: {
       date: DateTime.local(2023, 3, 19),
+      quantity: 10,
+    },
+  },
+  {
+    id: 9,
+    name: "Coffee",
+    price: 5,
+    description:
+      "Richly infused with freshly brewed coffee. Smooth color and feel.",
+    leftInStock: 0,
+    quantity: 1,
+    backInStock: {
+      date: DateTime.local(2023, 4, 8),
       quantity: 10,
     },
   },
