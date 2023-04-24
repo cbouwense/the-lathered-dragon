@@ -1429,6 +1429,130 @@ export const batches: Batch[] = [
       },
     ],
   },
+  {
+    id: 24,
+    pourDate: DateTime.fromISO("2023-04-22"),
+    cureDate: DateTime.fromISO("2023-05-22"),
+    name: "Lavender & Spruce",
+    ingredients: [
+      {
+        name: "olive oil",
+        product: getProductByName("redners olive oil"),
+        amount: 400,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "coconut oil",
+        product: getProductByName("bargain market coconut oil"),
+        amount: 200,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "castor oil",
+        product: getProductByName("amazon castor oil"),
+        amount: 25,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "cocoa butter",
+        product: getProductByName("amazon cocoa butter wafers"),
+        amount: 50,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "shea butter",
+        product: getProductByName("amazon shea butter"),
+        amount: 75,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "fragrance oil",
+        product: getProductByName("brambleberry fragrance oils"),
+        amount: 7,
+        unitOfMeasurement: UnitOfMeasurement.TEASPOONS,
+      },
+      {
+        name: "distilled water",
+        product: getProductByName("redners distilled water"),
+        amount: 175,
+        unitOfMeasurement: UnitOfMeasurement.MILLILITERS,
+      },
+      {
+        name: "lye",
+        product: getProductByName("devil lye"),
+        amount: 100,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "sodium lactate",
+        product: getProductByName("amazon sodium lactate"),
+        amount: 1,
+        unitOfMeasurement: UnitOfMeasurement.TEASPOONS,
+      },
+    ],
+  },
+  {
+    id: 25,
+    pourDate: DateTime.fromISO("2023-04-22"),
+    cureDate: DateTime.fromISO("2023-05-22"),
+    name: "Eucalyptus",
+    ingredients: [
+      {
+        name: "olive oil",
+        product: getProductByName("redners olive oil"),
+        amount: 400,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "coconut oil",
+        product: getProductByName("bargain market coconut oil"),
+        amount: 200,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "castor oil",
+        product: getProductByName("amazon castor oil"),
+        amount: 25,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "cocoa butter",
+        product: getProductByName("amazon cocoa butter wafers"),
+        amount: 50,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "shea butter",
+        product: getProductByName("amazon shea butter"),
+        amount: 75,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "fragrance oil",
+        product: getProductByName("brambleberry fragrance oils"),
+        amount: 7,
+        unitOfMeasurement: UnitOfMeasurement.TEASPOONS,
+      },
+      {
+        name: "distilled water",
+        product: getProductByName("redners distilled water"),
+        amount: 175,
+        unitOfMeasurement: UnitOfMeasurement.MILLILITERS,
+      },
+      {
+        name: "lye",
+        product: getProductByName("devil lye"),
+        amount: 100,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "sodium lactate",
+        product: getProductByName("amazon sodium lactate"),
+        amount: 1,
+        unitOfMeasurement: UnitOfMeasurement.TEASPOONS,
+      },
+    ],
+  },
 ];
 
 export const items: Item[] = [
@@ -1439,7 +1563,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Playful and fruity, mixed with real poppyseeds. Rachel's personal favorite for hand washing!",
-    leftInStock: 8,
+    leftInStock: 15,
     quantity: 1,
   },
   {
@@ -1449,8 +1573,22 @@ export const items: Item[] = [
     price: 5,
     description:
       "Serene and unmistakable, Rachel and I love Lavender bars for our kitchen hand washing.",
-    leftInStock: 8,
+    leftInStock: 2,
     quantity: 1,
+  },
+  {
+    id: 10,
+    name: "Lavender & Spruce",
+    image: "lavender.jpeg",
+    price: 5,
+    description:
+      "Serene and unmistakable, Rachel and I love Lavender bars for our kitchen hand washing.",
+    leftInStock: 0,
+    quantity: 1,
+    backInStock: {
+      date: DateTime.local(2023, 5, 22),
+      quantity: 10,
+    },
   },
   {
     id: 7,
@@ -1459,17 +1597,12 @@ export const items: Item[] = [
     price: 5,
     description:
       "Bold and invigorating. Christian's favorite bar for showering.",
-    leftInStock: 8,
+    leftInStock: 0,
     quantity: 1,
-  },
-  {
-    id: 6,
-    name: "Hint of Vanilla",
-    image: "hint_of_vanilla.jpeg",
-    price: 5,
-    description: "Mildly scented, with notes of warm vanilla sugar.",
-    leftInStock: 4,
-    quantity: 1,
+    backInStock: {
+      date: DateTime.local(2023, 5, 22),
+      quantity: 10,
+    },
   },
   {
     id: 3,
@@ -1478,12 +1611,8 @@ export const items: Item[] = [
     price: 5,
     description:
       "Masculine and refreshing, with notes of eucalyptus. You feel cleaner just smelling this bar.",
-    leftInStock: 9,
+    leftInStock: 0,
     quantity: 1,
-    backInStock: {
-      date: DateTime.local(2023, 2, 14),
-      quantity: 10,
-    },
   },
   {
     id: 8,
@@ -1493,10 +1622,6 @@ export const items: Item[] = [
       "Richly infused with freshly brewed coffee. Blended with finely ground coffee beans for exfoliation.",
     leftInStock: 0,
     quantity: 1,
-    backInStock: {
-      date: DateTime.local(2023, 3, 19),
-      quantity: 10,
-    },
   },
   {
     id: 9,
@@ -1504,18 +1629,23 @@ export const items: Item[] = [
     price: 5,
     description:
       "Richly infused with freshly brewed coffee. Smooth color and feel.",
-    leftInStock: 0,
+    leftInStock: 9,
     quantity: 1,
-    backInStock: {
-      date: DateTime.local(2023, 4, 8),
-      quantity: 10,
-    },
   },
   {
     id: 5,
     name: "Sandalwood",
     price: 5,
     description: "Mild and homey, with hints of ginger.",
+    leftInStock: 0,
+    quantity: 1,
+  },
+  {
+    id: 6,
+    name: "Hint of Vanilla",
+    image: "hint_of_vanilla.jpeg",
+    price: 5,
+    description: "Mildly scented, with notes of warm vanilla sugar.",
     leftInStock: 0,
     quantity: 1,
   },
