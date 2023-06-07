@@ -1563,7 +1563,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Playful and fruity, mixed with real poppyseeds. Rachel's personal favorite for hand washing!",
-    leftInStock: 15,
+    leftInStock: 6,
     quantity: 1,
   },
   {
