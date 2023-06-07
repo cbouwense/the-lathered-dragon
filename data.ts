@@ -1573,7 +1573,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Serene and unmistakable, Rachel and I love Lavender bars for our kitchen hand washing.",
-    leftInStock: 2,
+    leftInStock: 0,
     quantity: 1,
   },
   {
@@ -1585,10 +1585,6 @@ export const items: Item[] = [
       "Serene and unmistakable, Rachel and I love Lavender bars for our kitchen hand washing.",
     leftInStock: 0,
     quantity: 1,
-    backInStock: {
-      date: DateTime.local(2023, 5, 22),
-      quantity: 10,
-    },
   },
   {
     id: 7,
@@ -1597,12 +1593,8 @@ export const items: Item[] = [
     price: 5,
     description:
       "Bold and invigorating. Christian's favorite bar for showering.",
-    leftInStock: 0,
+    leftInStock: 3,
     quantity: 1,
-    backInStock: {
-      date: DateTime.local(2023, 5, 22),
-      quantity: 10,
-    },
   },
   {
     id: 3,
@@ -1629,7 +1621,7 @@ export const items: Item[] = [
     price: 5,
     description:
       "Richly infused with freshly brewed coffee. Smooth color and feel.",
-    leftInStock: 9,
+    leftInStock: 1,
     quantity: 1,
   },
   {
