@@ -1553,6 +1553,130 @@ export const batches: Batch[] = [
       },
     ],
   },
+  {
+    id: 26,
+    pourDate: DateTime.fromISO("2023-06-13"),
+    cureDate: DateTime.fromISO("2023-06-27"),
+    name: "Fruit Loops",
+    ingredients: [
+      {
+        name: "olive oil",
+        product: getProductByName("redners olive oil"),
+        amount: 400,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "coconut oil",
+        product: getProductByName("bargain market coconut oil"),
+        amount: 200,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "castor oil",
+        product: getProductByName("amazon castor oil"),
+        amount: 25,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "cocoa butter",
+        product: getProductByName("amazon cocoa butter wafers"),
+        amount: 50,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "shea butter",
+        product: getProductByName("amazon shea butter"),
+        amount: 75,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "fragrance oil",
+        product: getProductByName("brambleberry fragrance oils"),
+        amount: 7,
+        unitOfMeasurement: UnitOfMeasurement.TEASPOONS,
+      },
+      {
+        name: "distilled water",
+        product: getProductByName("redners distilled water"),
+        amount: 175,
+        unitOfMeasurement: UnitOfMeasurement.MILLILITERS,
+      },
+      {
+        name: "lye",
+        product: getProductByName("devil lye"),
+        amount: 100,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "sodium lactate",
+        product: getProductByName("amazon sodium lactate"),
+        amount: 1,
+        unitOfMeasurement: UnitOfMeasurement.TEASPOONS,
+      },
+    ],
+  },
+{
+    id: 27,
+    pourDate: DateTime.fromISO("2023-06-13"),
+    cureDate: DateTime.fromISO("2023-06-27"),
+    name: "Strawberry Shortcake",
+    ingredients: [
+      {
+        name: "olive oil",
+        product: getProductByName("redners olive oil"),
+        amount: 400,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "coconut oil",
+        product: getProductByName("bargain market coconut oil"),
+        amount: 200,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "castor oil",
+        product: getProductByName("amazon castor oil"),
+        amount: 25,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "cocoa butter",
+        product: getProductByName("amazon cocoa butter wafers"),
+        amount: 50,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "shea butter",
+        product: getProductByName("amazon shea butter"),
+        amount: 75,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "fragrance oil",
+        product: getProductByName("brambleberry fragrance oils"),
+        amount: 7,
+        unitOfMeasurement: UnitOfMeasurement.TEASPOONS,
+      },
+      {
+        name: "distilled water",
+        product: getProductByName("redners distilled water"),
+        amount: 175,
+        unitOfMeasurement: UnitOfMeasurement.MILLILITERS,
+      },
+      {
+        name: "lye",
+        product: getProductByName("devil lye"),
+        amount: 100,
+        unitOfMeasurement: UnitOfMeasurement.GRAMS,
+      },
+      {
+        name: "sodium lactate",
+        product: getProductByName("amazon sodium lactate"),
+        amount: 1,
+        unitOfMeasurement: UnitOfMeasurement.TEASPOONS,
+      },
+    ],
+  },
 ];
 
 export const items: Item[] = [
