@@ -49,7 +49,7 @@ export default async function handler(
         metadata: {
           images: cart[0].image,
         },
-        shipping_address_collection: { allowed_countries: ["US", "CA"] },
+        shipping_address_collection: { allowed_countries: ["US"] },
         shipping_options: [
           {
             shipping_rate_data: {
